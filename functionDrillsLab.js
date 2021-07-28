@@ -5,7 +5,11 @@
 */
 
 //CODE HERE
+function helloWorld() {
+  console.log("Hello, World!")
+}
 
+helloWorld()
 
 ////////////////// PROBLEM 2 ////////////////////
 /*
@@ -15,7 +19,11 @@
 */
 
 //CODE HERE
+function printName(name) {
+  console.log(name)
+}
 
+printName("Sam")
 
 ////////////////// PROBLEM 3 ////////////////////
 /*
@@ -28,6 +36,11 @@
 */
 
 //CODE HERE
+function greeting(name) {
+  console.log(`Hello, ${name}`)
+}
+
+greeting("Sam")
 
 
 ////////////////// PROBLEM 4 ////////////////////
@@ -38,6 +51,11 @@
 */
 
 //CODE HERE
+function add(num1, num2) {
+  return num1 + num2
+}
+
+let sum = add(2,4)
 
 
 ////////////////// PROBLEM 5 ////////////////////
@@ -50,7 +68,17 @@
 */
 
 //CODE HERE
+function nameCheck(name) {
+  if (name === "Steven") {
+    return "What's up Steven?"
+  } else if (name === "Bryan") {
+    return "Hey Bryan!"
+  } else {
+    return `Cool name, ${name}`
+  }
+}
 
+let nameGreeting = nameCheck("Sam")
 
 ////////////////// PROBLEM 6 ////////////////////
 /*
@@ -63,7 +91,19 @@
 */
 
 //CODE HERE
+function faveColorFinder(color) {
+  if (color === "red") {
+    return "red is a great color"
+  } else if (color === "green") {
+    return "green is a solid favorite color"
+  } else if (color === "black") {
+    return "so trendy"
+  } else {
+    return "you need to evaluate your favorite color choice"
+  }
+}
 
+let colorRating = faveColorFinder("Blue")
 
 ////////////////// PROBLEM 7 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
@@ -74,7 +114,13 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+function printAllNames(nameArr) {
+  for (let i=0; i<nameArr.length; i++) {
+    console.log(nameArr[i])
+  }
+}
 
+printAllNames(namesArr)
 
 ////////////////// PROBLEM 8 ////////////////////
 /*
@@ -85,7 +131,15 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+function thatsOdd(num) {
+  if (num%2 === 0) {
+    return "That's not odd!"
+  } else {
+    return "That is odd indeed!"
+  }
+}
 
+let oddChecker = thatsOdd(9)
 
 ////////////////// PROBLEM 9 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
@@ -99,7 +153,19 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
+function bigOrSmall(arr) {
+  let answers = [];
+  for (let i = 0; i<arr.length; i++){
+    if (arr[i] > 100) {
+      answers.push("big")
+    } else {
+      answers.push("small")
+    }
+  }
+  return answers
+} 
 
+let arrayEvaluator = bigOrSmall(bigOrSmallArray)
 
 ////////////////// PROBLEM 10 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -110,7 +176,14 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
-
+function theEliminator(contestants, loser) {
+  for (let i=0; i<contestants.length; i++){
+    if (contestants[i] === loser) {
+      contestants.splice(i, 1)
+    }
+  }
+  return contestants
+}
 
 ////////////////// PROBLEM 11 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -119,6 +192,9 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+function lowerToUpper(str) {
+  console.log(str.toUpperCase())
+}
 
 
 ////////////////// PROBLEM 12 ////////////////////
@@ -128,7 +204,11 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+function buyChocolateFrogs(gold) {
+  return gold/3
+}
 
+let totalFrogs = buyChocolateFrogs(1000)
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
@@ -136,30 +216,51 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+function buyChocolateFrogs(gold) {
+  return Math.floor(gold/3)
+}
 
+let totalFrogs2 = buyChocolateFrogs(1000)
 
 ////////////////// PROBLEM 14 ////////////////////
-let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+let sampleArray = [0,1,2,3,7,4,5,6,8,9]
 /*
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
 
 //CODE HERE
+function ascendingArray(arr) {
+  let placeholder = arr[0]
+  for (let i=1; i<arr.length; i++) {
+    if (placeholder < arr[i]) {
+      placeholder = arr[i]
+    } else {
+      return false
+    }
+  }
+  return true
+}
 
+let arrayIsAscending = ascendingArray(sampleArray)
+console.log(arrayIsAscending)
 
 ////////////////// PROBLEM 15 ////////////////////
 
 let duck = "cute";
+globalScope.push(duck)
 
 function bathroom() {
   let rubberDuck = "squeaky";
+  bathroomScope.push(rubberDuck)
   function bathtub() {
     let sailorDuck = "nautical";
+    bathtubScope.push(sailorDuck)
   }
 }
 
 function pond() {
   let realDuck = "fluffy";
+  pondScope.push(realDuck)
 }
 
 /*
